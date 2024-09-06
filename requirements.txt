@@ -10,3 +10,4 @@ MarkupSafe==2.1.5
 requests==2.32.2
 urllib3==2.2.1
 Werkzeug==3.0.2
+Flask-SQLAlchemy==3.0.5

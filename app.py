@@ -1,15 +1,32 @@
-from flask import Flask, render_template, redirect, request
-from flask_sqlalchemy import SQLAlchemy
-from flask_migrate import Migrate
+from flask import Flask
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:@localhost/vehiculos_db' #coneccion a la base de datos 
-# (despues del @ es el ip) en el ultimo / de la linea 6 nombre base de datos
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-db = SQLAlchemy(app)
-migrate = Migrate(app, db)
 
-from models import Marca, Tipo, Vehiculo
+
+@app.route("/")
+def hello():
+    return "welcome to docker comisión A"
+
+
+if __name__ == "__main__":
+    app.run(
+host="0.0.0.0",
+port=5000,
+debug=True,
+)
+
+# from flask import Flask, render_template, redirect, request
+# from flask_sqlalchemy import SQLAlchemy
+# from flask_migrate import Migrate
+
+# app = Flask(__name__)
+# app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:@localhost/vehiculos_db' #coneccion a la base de datos 
+# # (despues del @ es el ip) en el ultimo / de la linea 6 nombre base de datos
+# app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+# db = SQLAlchemy(app)
+# migrate = Migrate(app, db)
+
+# from models import Marca, Tipo, Vehiculo
 
 # listado_nombres = ['Juan', 'Ana', 'Luis']
 # listado_personas = [
